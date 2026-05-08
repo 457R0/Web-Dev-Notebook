@@ -1,0 +1,262 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.motivation{
+	color:green;
+}
+/* Book Container (3D Perspective) */
+.book {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    perspective: 2000px; /* Depth for 3D flip */
+    transform-style: preserve-3d;
+    margin-bottom: 20px;
+}
+
+/* Individual Page - positioned on right half of book */
+.page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    transform-style: preserve-3d;
+    transform-origin: left center; /* Flip from left edge (center of book) */
+    transition: transform 0.8s ease-in-out;
+    z-index: 1;
+}
+
+/* Page Faces (Front/Back) */
+.page-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide back when flipped */
+    padding: 40px 60px 40px 80px; /* Space for spiral binding */
+    background: #fefefc; /* Paper color */
+    /* Notebook lined paper effect */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 23px,
+        #e0e8ff 23px,
+        #e0e8ff 24px
+    );
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+/* Back face of page */
+.page-face.back {
+    transform: rotateY(180deg);
+    background: #fefefc;
+    /* Lined paper on back too */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 23px,
+        #e0e8ff 23px,
+        #e0e8ff 24px
+    );
+}
+/* Flipped Page State - rotate to show back face on left half */
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Z-index now managed by JavaScript */
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.nav button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#page-counter {
+    font-weight: bold;
+}
+
+/* Table of Contents Sidebar */
+.toc-sidebar {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.toc-sidebar.open {
+    left: 0;
+}
+
+#toc-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#toc-list {
+    list-style: none;
+    margin-top: 30px;
+}
+
+#toc-list li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #4a6fa5;
+}
+
+#toc-list li:hover {
+    text-decoration: underline;
+}
+
+#toc-toggle {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Search Modal */
+.search-modal {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: top 0.3s ease;
+    z-index: 1000;
+}
+
+.search-modal.open {
+    top: 20px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#search-results {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+#search-results div {
+    padding: 5px;
+    cursor: pointer;
+    color: #4a6fa5;
+}
+
+#search-results div:hover {
+    background: #f0f0f0;
+}
+
+#search-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#search-toggle {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Bookmark Button */
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.bookmark-btn.bookmarked {
+    color: #ffd700; /* Gold for bookmarked */
+}
+
+/* Code Snippet Styling */
+code {
+    background: #f0f0f0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+pre {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+.parenttut{
+	background-color:red;
+	padding: 20px;
+}
+.parenttut h1{
+	color:blue;
+}
+.parenttut span{
+	color:yellow;
+}

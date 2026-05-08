@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My WebDev Notebook</title>
+    <link rel="stylesheet" href="../Web Dev Notebook/CSS/style.css">
+    <!-- Handwritten font (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- new page code 
+<pre><code><!-- Add more pages by copying the code block below, increment data-page:
+	&lt;div class="page" data-page="#"&gt;
+		&lt;div class="page-face front"&gt;
+        &lt;button class="bookmark-btn" data-page="#"&gt;☆&lt;/button&gt;
+        &lt;h2&gt;Welcome to My Notebook&lt;/h2&gt;
+        &lt;p&gt;content here.&lt;/p&gt;
+        &lt;/div&gt;
+        </code></pre>
+<pre><code> This is the back of the page, so its optional, no need to number. 
+           &lt;div class="page-face back"&gt; 
+               &lt;p&gt;content here&lt;/p&gt;
+           &lt;/div&gt;
+	&lt;/div&gt;
+Add more pages by copying the code block above, increment data-page -->
+    
+<div class="book" id="book"> <!-- Book Container (3D perspective) -->
+	<div class="page" data-page="1">   <!-- Welcome -->
+		<div class="page-face front">
+			<button class="bookmark-btn" data-page="1">☆</button>
+			<h2>Welcome to My Notebook</h2>
+			<br>
+			<p><em>Note:<br>This notebook will constantly be updated!</em></p>
+			<p><em>Check back often!</em></p>
+			<p><br>NO AI WERE USED OR HARMED IN THIS PROJECT!</p>
+		</div>
+		<div class="page-face back">
+			<h2>Purposes of this book:</h2>
+			<ul>
+				<li>To reinforce my learning, by doing!</li>
+				<li>Test my ability to transfer knowledge to others.</li>
+				<li>It's a useful reference tool.</li>
+			</ul>
+		</div>
+</div>
+	<div class="page" data-page="2">   <!--HTML SECTION -->
+	<div class="page-face front">
+	<h2>HTML Basics</h2>
+	<p>Quick Refresh:</p>
+	<a href="../Web Dev Notebook/HTML/Refreshers.html">HTML Refreshers</a>
+	<button class="bookmark-btn" data-page="2">☆</button>
+</div>
+	<div class="page-face back">
+	<h2>Divs Explained:</h2>
+	<p>A <strong>Div</strong> is a content division element
+	it allows you to divide content into seperate "boxes" which makes it easier for coder to interact with.</p>
+	<p>To get a better understanding of the order of  parents and children take a look at the red box labeled programmer.</p>
+	<div class=parenttut>
+    <h1>a<span>pro</span>grammer</h1>
+    </div>
+	<div class="div kiss">
+	<p>The red box is the div. It appears "last" on screen.</p>
+	<br>
+	<p>Next to be seen or "appear on screen" would be the blue h1 because it sits on its parent, the red div.
+	<br>Finally the yellow span sits on top of its parent the blue h1.
+	<br>To summarize when coding the user will see your coding like this: Yellow first then blue finally red.</p>
+ </div>
+</div>
+</div>
+
+
+	<div class="page" data-page="3">   <!-- CSS Section -->
+	<div class="page-face front">
+                <button class="bookmark-btn" data-page="3">☆</button>
+                <h5>CSS-Cascading Style Sheet </h5>
+				<br>
+				<p>The asterisk (*) aka universal selector for CSS, matches all elements in a document, allowing you to apply styles universally.</p>
+				<br>
+				<p>It can be useful for resetting styles or applying a default style across all elements, but should be used carefully to avoid performance issues.</p>                
+				<br>
+				<ul> Helpful links to break down CSS:
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS"> MDN CSS Walktrough </a></li>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors">CSS Selector Crash Course</a></li>
+				<li><a href="../Web Dev Notebook/CSS/CSSnotes.html">CSS Reference</a></li>
+				</ul>
+    </div>
+	<div class="page-face back">
+	<p>Theres 3 types of CSS:</p>
+				<ol>
+					<li>In-Line: Applied directly within an HTML element's style attribute, affecting only that specific element.</li>
+					<li>Internal: Defined within a style tag in the head section of an HTML document, influencing the entire page.</li>
+					<li>External: Contained in a separate .css file linked to the HTML document, allowing for consistent styling across multiple pages.</li>
+				</ol>            
+	</div>
+</div>	
+	<div class="page" data-page="4">   <!--JS Section -->
+	<div class="page-face front">
+		<button class="bookmark-btn" data-page="4">☆</button>
+         <h2>Quick JS rundown:</h2>
+         <p>It contains notes on how JS functions, in general and for this notebook!</p>
+         <a href="../Web Dev Notebook/JS/JSNotes.html">JS Notes</a>
+    </div>
+</div>	
+</div>
+<div class="nav">  <!-- Navigation Buttons -->
+        <button id="prev-btn">← Previous</button>
+        <span id="page-counter">Page 1 of 2</span>
+        <button id="next-btn">Next →</button>
+	</div>
+<div class="toc-sidebar" id="toc-sidebar"> <!-- Table of Contents Sidebar -->
+        <button id="toc-toggle">📖 TOC</button>
+        <h3>Table of Contents</h3>
+        <button id="toc-close">×</button>
+        <ul id="toc-list"></ul>
+    </div>
+<div class="search-modal" id="search-modal"> <!-- Search Modal -->
+        <button id="search-toggle">🔍 Search</button>
+        <input type="text" id="search-input" placeholder="Search notebook...">
+        <div id="search-results"></div>
+        <button id="search-close">×</button>
+</div>    
+
+<script src="../Web Dev Notebook/JS/notebookscript.js"></script>
+    
+</body>
+<footer>
+	<p>&copy;2026 Taveon Nelson</p>
+</footer>
+</html>
+

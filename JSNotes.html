@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My JS Notes (explained)</title>
+</head>
+<body>
+	<div class="Intro">
+	<h1>JavaScript gives websites functionality.</h1>
+	<ul>Examples:
+	<li>Buttons that work</li>
+	<li>Menus opening</li>
+	<li>Animations</li>
+	<li>Form validation</li>
+	</ul>
+
+Core idea:
+
+User does something
+		↓
+JavaScript responds
+		↓
+HTML/CSS changes
+		↓
+Browser updates visually
+</div>
+	<div class="DOM">
+	<p><em>DOM</em>= Document Object Model.</p>
+<h2>DOMContentLoaded</h2>
+<pre><code>document.addEventListener('DOMContentLoaded', () => {
+});</code></pre>
+<p>Meaning:</p>
+<p>"Wait until the HTML page fully loads before running JavaScript."</p>
+<p>Why this matters:</p>
+<p>If JavaScript runs too early, it may try to access elements that do not exist yet.</p>
+<br>
+<p>The DOM is the live HTML page inside the browser.</p>
+<p>JavaScript changes the DOM.</p>
+<p>Examples:</p>
+<pre><code>
+Change text:
+element.textContent = 'Hello';
+
+Add HTML:
+parent.appendChild(child);
+
+Create elements:
+const div = document.createElement('div');
+
+Add/remove classes:
+element.classList.add('active');
+</code></pre>
+</div>
+	<div class="html">
+<h2>SELECTING HTML ELEMENTS</h2>
+--------------------------------------------------
+
+JavaScript must first "find" HTML elements before interacting with them.
+
+Examples:
+
+const button = document.getElementById('next-btn');
+
+const pages = document.querySelectorAll('.page');
+
+Concept:
+- getElementById() → finds one element by ID
+- querySelector() → finds first matching element
+- querySelectorAll() → finds all matching elements
+
+Example HTML:
+
+<button id="next-btn">Next</button>
+
+JavaScript stores this element in memory.
+</div>
+	<div class="Variables">
+<h2>VARIABLES</h2> 
+<p>Variables store data.</p>
+<p>Example:</p>
+<pre><code>
+let currentPage = 0;
+</code></pre>
+<p>Meaning:</p>
+<p>Store the current page number.</p>
+
+<ol>Types:
+<li>let → value can change.</li>
+<li>const → value should <strong>NOT</strong> change.</li>
+</ol>
+ 
+<p>Examples:</p>
+<pre><code>let score = 10; <!-- the score will start at 10 and can change.-->
+</code></pre> 
+<pre><code>const totalPages = 5; <!-- The total number of pages is set to 5 and WILL NOT change.-->
+</code></pre>
+</div>
+	<div class="Functions">
+	<h2>FUNCTIONS</h2> 
+	<p>Functions are reusable blocks of instructions.</p>
+
+<p>Example:</p>
+<pre><code>
+function flipNext() {
+}
+</code></pre>
+<em>Think: "Save these instructions so they can run later."</em>
+<ul>Functions Help:
+<li>organize code</li>
+<li>avoid repetition</li>
+<li>make code reusable</li>
+</ul> 
+</div>
+	<div class="Event Listeners">
+	<p>Event listeners wait for user interaction.</p>
+	<em>Example:</em>
+	<pre><code>button.addEventListener('click', flipNext);
+	</code></pre>
+<p>Meaning:"When the button is clicked, run flipNext()."</p>
+
+
+Common events:
+- click
+- keydown
+- input
+- submit
+- mouseenter
+- mouseleave
+
+This is one of the MOST IMPORTANT frontend concepts.
+</div>
+	<div class="Arrays">
+	<h2>ARRAYS</h2>
+	<p>Arrays store lists of items.</p>
+	<em>Example:</em>
+	<pre><code>const pages = Array.from(document.querySelectorAll('.page'));
+</code></pre>
+	<em>KISS PLEASE:</em>
+	<p>“Go through the webpage, grab every element with class page, turn the results into a real array, and store it inside a variable named pages.”</p>
+	<br>
+	<em>Think:</em>
+	<pre><code>
+pages = [page1, page2, page3]
+</code></pre>
+	<p>Access order:</p>
+	<pre><code>
+pages[0]//page 1
+pages[1]//page 2
+pages[2]//page 3
+</code></pre>
+	</div>
+	<div class="Loops">
+	<h2>LOOPS</h2>
+	<p>Loops repeat actions.</p>
+	<p>Example:</p>
+<pre><code>
+pages.forEach((page) => {
+});
+</code></pre>
+<em>Meaning:</em>
+<p>"Do something for every page."</p>
+<ul>Loops help:
+<li>update many elements</li>
+<li>generate lists</li>
+<li>process collections</li>
+</ul>
+</div>
+	<div class="CSS Class Manipulation">
+	<h2>CSS CLASS MANIPULATION</h2>
+	<p>JavaScript often changes CSS classes.</p>
+	<em>Example:</em>
+	<pre><code>
+page.classList.add('flipped');
+
+<em>Equivalent HTML change:</em>
+FROM:
+&lt;div class="page"&gt;
+
+TO:
+&lt;div class="page flipped"&gt;
+	</code></pre>
+	<p>CSS then handles the animation or appearance.</p>
+
+<strong>REMINDER:</strong>
+Most frontend JavaScript works by:
+- adding classes
+- removing classes
+- toggling classes
+</div>
+	<div class="Conditionals">
+	<h2>CONDITIONALS (IF STATEMENTS)</h2>
+	<p>Conditionals make decisions.</p>
+	<em>Example:</em>
+	<pre><code>
+		if (currentPage &lt; totalPages - 1) { }
+	</code></pre>
+	<em>Meaning:</em>
+	<p>"Only continue if more pages exist."</p>
+	<ul>Used to:
+<li>prevent errors</li>
+<li>control logic</li>
+<li>check conditions</li>
+</ul>
+	<pre><code>
+Common operators:
+ == = equal
+!= = not equal
+&gt; = greater than
+&lt; = less than
+&gt;= = greater/equal
+&lt;= =less/equal
+</code></pre>
+</div>
+	<div class="Local Storage">
+	<h2>LOCAL STORAGE</h2>
+	<p>localStorage stores data in the browser.</p>
+	<em>Example:</em>
+	<pre><code>
+localStorage.setItem('theme', 'dark');
+
+Retrieve data:
+
+localStorage.getItem('theme');
+</code></pre>
+	<p>Used for:</p>
+	<ul>
+<li>bookmarks</li>
+<li>themes</li>
+<li>saved preferences</li>
+<li>persistent settings</li>
+</ul>
+	<p>Data remains after page refresh.</p>
+</div>
+	<div class="Search Logic">
+<h2>SEARCH LOGIC</h2>
+
+
+Example:
+
+if (content.includes(query))
+
+Meaning:
+"Does this text contain the search term?"
+
+Useful for:
+- search bars
+- filtering
+- live search
+- matching content
+</div>
+	<div class="CSS to JS">
+<h2>CHANGING CSS WITH JAVASCRIPT</h2>
+JavaScript can directly modify CSS.
+
+Example:
+<pre><code>
+page.style.zIndex = 10;
+
+Equivalent CSS:
+
+z-index: 10;
+</code></pre>
+<p>You can change:</p>
+<ul>
+<li>width</li>
+<li>height</li>
+<li>colors</li>
+<li>transforms</li>
+<li>opacity</li>
+<li>positioning</li>
+<li>animations</li>
+</ul> 
+</div>
+	<div class="Template Literals">
+<h2>TEMPLATE LITERALS</h2>
+
+<p>Allows variables inside strings.</p>
+
+Old way:
+'Page ' + currentPage
+
+Modern way:
+`Page ${currentPage}`
+
+Much cleaner.
+</div>
+	<div class="ArrowFunctions">
+<h2>ARROW FUNCTIONS</h2>
+
+
+Example:
+
+() => {
+
+}
+
+Modern shorthand for functions.
+
+Traditional:
+function() {
+
+}
+
+Arrow:
+() => {
+
+}
+
+Very common in modern JavaScript.
+</div>
+	<div class="Data Attributes">
+<h3>DATA ATTRIBUTES</h3>
+<h6>HTML Version:</h6>
+<pre><code>&lt;button&gt;data-page="#"&gt;Button Label&lt;/button&gt;</code></pre>
+<br>
+<h6>JavaScript Version:</h6>
+<pre><code>
+button.dataset.page
+</code></pre>
+<ul>
+	<li>Useful for storing custom data inside HTML elements.</li>
+</ul>
+</div>
+	<div class="Propagation">
+<h2>STOP PROPAGATION</h2>
+<em>Example:</em>
+<pre><code>e.stopPropagation();</code></pre>
+<p>Prevents events from bubbling upward.</p>
+
+<ul>Useful when:
+	<li>nested elements exist.</li>
+	<li>clicking child should NOT trigger parent action.</li>
+</ul>
+</div> 
+	<div class="Keyboard Events">
+<h2>KEYBOARD EVENTS</h2>
+<p>Example:</p>
+<pre><code>
+document.addEventListener('keydown', (e) => {
+
+});
+</code></pre>
+<ul>Used for:
+	<li>shortcuts</li>
+	<li>game controls</li>
+	<li>accessibility</li>
+	<li>keyboard navigation</li>
+</ul>
+<p>Example:</p>
+<pre><code>
+if (e.key === 'ArrowRight')
+</code></pre>
+</div>
+</body>
+</html>
