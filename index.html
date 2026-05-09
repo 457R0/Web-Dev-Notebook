@@ -26,7 +26,7 @@
 Add more pages by copying the code block above, increment data-page -->
     
 <div class="book" id="book"> <!-- Book Container (3D perspective) -->
-	<div class="page" data-page="1">   <!-- Welcome -->
+<div class="page" data-page="1">   <!-- Welcome -->
 		<div class="page-face front">
 			<button class="bookmark-btn" data-page="1">☆</button>
 			<h2>Welcome to My Notebook</h2>
@@ -44,7 +44,7 @@ Add more pages by copying the code block above, increment data-page -->
 			</ul>
 		</div>
 </div>
-	<div class="page" data-page="2">   <!--HTML SECTION -->
+<div class="page" data-page="2">   <!--HTML SECTION -->
 	<div class="page-face front">
 	<h2>HTML Basics</h2>
 	<p>Quick Refresh:</p>
@@ -68,57 +68,66 @@ Add more pages by copying the code block above, increment data-page -->
  </div>
 </div>
 </div>
-
-
-	<div class="page" data-page="3">   <!-- CSS Section -->
+<div class="page" data-page="3">   <!-- CSS Section -->
 	<div class="page-face front">
-                <button class="bookmark-btn" data-page="3">☆</button>
-                <h5>CSS-Cascading Style Sheet </h5>
-				<br>
-				<p>The asterisk (*) aka universal selector for CSS, matches all elements in a document, allowing you to apply styles universally.</p>
-				<br>
-				<p>It can be useful for resetting styles or applying a default style across all elements, but should be used carefully to avoid performance issues.</p>                
-				<br>
-				<ul> Helpful links to break down CSS:
-				<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS"> MDN CSS Walktrough </a></li>
-				<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors">CSS Selector Crash Course</a></li>
-				<li><a href="./CSS/CSSnotes.html">CSS Reference</a></li>
-				</ul>
+		<button class="bookmark-btn" data-page="3">☆</button>
+        <h5>CSS-Cascading Style Sheet </h5>
+		<br>
+		<p>The asterisk (*) aka universal selector for CSS, matches all elements in a document, allowing you to apply styles universally.</p>
+		<br>
+		<p>It can be useful for resetting styles or applying a default style across all elements, but should be used carefully to avoid performance issues.</p>                
+		<br>
+		<ul> Helpful links to break down CSS:
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS"> MDN CSS Walktrough </a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors">CSS Selector Crash Course</a></li>
+			<li><a href="./CSS/CSSnotes.html">CSS Reference</a></li>
+		</ul>
     </div>
 	<div class="page-face back">
-	<p>Theres 3 types of CSS:</p>
+	<h2>Theres 3 types of CSS:</h2>
 				<ol>
-					<li>In-Line: Applied directly within an HTML element's style attribute, affecting only that specific element.</li>
-					<li>Internal: Defined within a style tag in the head section of an HTML document, influencing the entire page.</li>
-					<li>External: Contained in a separate .css file linked to the HTML document, allowing for consistent styling across multiple pages.</li>
+					<li><strong>In-Line:</strong><br>Applied directly within an HTML element's style attribute, affecting only that specific element.</li>
+					<li><strong>Internal:</strong><br>Defined within a style tag in the head section of an HTML document, influencing the entire page.</li>
+					<li><strong>External:</strong><br>Contained in a separate .css file linked to the HTML document, allowing for consistent styling across multiple pages.</li>
 				</ol>            
 	</div>
 </div>	
-	<div class="page" data-page="4">   <!--JS Section -->
+<div class="page" data-page="4"> <!--CSS:Media Query -->
 	<div class="page-face front">
-		<button class="bookmark-btn" data-page="4">☆</button>
-         <h2>Quick JS rundown:</h2>
-         <p>It contains notes on how JS functions, in general and for this notebook!</p>
-         <a href="./JS/JSNotes.html">JS Notes</a>
-    </div>
-</div>	
+    <button class="bookmark-btn" data-page="4">☆</button>
+    <h2>Media Queries: </h2>
+    <a href="./CSS/mqnotes.html">Media Query Notes</a>
+	</div>
+	<div class="page-face back">
+	<h2>Quick JS rundown:</h2>
+    <p>It contains notes on how JS functions, in general and for this notebook!</p>
+    <a href="./JS/JSNotes.html">JS Notes</a>
+	</div>
 </div>
+<div class="page" data-page="5">   <!--JS Section -->
+	<div class="page-face front">
+	<button class="bookmark-btn" data-page="5">☆</button>
+	
+	<h2><em>More to come!</em></h2>
+    </div>
+  </div>
+</div>	
 <div class="nav">  <!-- Navigation Buttons -->
-        <button id="prev-btn">← Previous</button>
-        <span id="page-counter">Page 1 of 2</span>
-        <button id="next-btn">Next →</button>
+	<button id="prev-btn">← Previous</button>
+	<span id="page-counter">Page 1 of 2</span>
+	<button id="next-btn">Next →</button>
 	</div>
 <div class="toc-sidebar" id="toc-sidebar"> <!-- Table of Contents Sidebar -->
-        <button id="toc-toggle">📖 TOC</button>
-        <h3>Table of Contents</h3>
-        <button id="toc-close">×</button>
-        <ul id="toc-list"></ul>
-    </div>
+	<button id="toc-toggle">📖 TOC</button>
+	<h3>Table of Contents</h3>
+	<button id="toc-close">×</button>
+	<ul id="toc-list"></ul>
+	</div>
 <div class="search-modal" id="search-modal"> <!-- Search Modal -->
-        <button id="search-toggle">🔍 Search</button>
-        <input type="text" id="search-input" placeholder="Search notebook...">
-        <div id="search-results"></div>
-        <button id="search-close">×</button>
+  <button id="search-toggle">🔍 Search</button>
+  <input type="text" id="search-input" placeholder="Search notebook...">
+  <div id="search-results"></div>
+  <button id="search-close">×</button>
 </div>    
 
 <script src="./JS/notebookscript.js"></script>
