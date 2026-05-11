@@ -176,35 +176,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // Click Book Left/Right
-if (book) {
+        // Click Book Left/Right
+    if (book) {
 
-    book.addEventListener('click', (e) => {
+        book.addEventListener('click', (e) => {
 
-        // Ignore interactive elements
-        if (
-            e.target.closest(
-                'a, button, input, textarea, select, label'
-            )
-        ) {
-            return;
-        }
+            // Do not flip pages when clicking interactive elements.
+            if (e.target.closest('a, button, input, textarea, select, label')) {
+                return;
+            }
 
-        const rect = book.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
+            const rect = book.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
 
-        if (clickX > rect.width / 2) {
-            flipNext();
-        } else {
-            flipPrev();
-        }
+            if (clickX > rect.width / 2) {
+                flipNext();
+            } else {
+                flipPrev();
+            }
 
-    });
-
-}
+        });
 
     }
-
+    
     // -----------------------------
     // Table of Contents
     // -----------------------------
