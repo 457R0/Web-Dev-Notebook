@@ -3,7 +3,9 @@
 Adding a style to the webpage is easy! We use a file called style.css, it's placed inside the <strong>&lt;head&gt;</strong>
 <h5>Example:</h5><p>&lt;link rel="stylesheet" href="style.css"&gt;</p>
 <br>
-CSS-Rule:A Selector and its properties form a CSS rule. For lack of a better explaination, it's CSS's verison of a element. There's no limit to how many rules can be in a webpage! 
+<div class="cssrule"> <!--CSS Rule -->
+	<p>CSS-Rule:A Selector and its properties form a CSS rule. For lack of a better explaination, it's CSS's verison of a element. There's no limit to how many rules can be in a webpage!</p>
+</div> 
 <br>
 It's an element followed by {, then you add the attribute you want, end it with ;, fianlly close with }
 <br>
@@ -16,3 +18,23 @@ At some point you'll want to target just one element to style, to do so you can 
 Example targeting paragraphs of the webpage:
 <br>
 <h4><pre><code>.p{<br>color:blue;<br>}</code></pre></h4>
+
+<br>	
+<div class="borders">  <!--CSS Borders --> 
+<h2>CSS Borders</h2> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border">3MDN</a>
+<p>Borders are a line around an element of a certain thickness and color.</p>
+</div>
+<br>
+<div class="borderradius"> <!--Border Radius)-->
+<h2>Border-Radius</h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius">MDN</a>
+<p>To make an image an circle, we set <strong>border-radius</strong> to <strong>half the width</strong> of an imgage.</p>
+<em>This only works if the image is a square!</em>
+<pre><code>
+img{
+	height: 100px;
+	width: 100px:
+	border-radius: 50px;
+}
+</code></pre>
+</div>
