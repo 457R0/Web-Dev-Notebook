@@ -177,20 +177,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Click Book Left/Right
-    if (book) {
+if (book) {
 
-        book.addEventListener('click', (e) => {
+    book.addEventListener('click', (e) => {
 
-            const rect = book.getBoundingClientRect();
-            const clickX = e.clientX - rect.left;
+        // Ignore interactive elements
+        if (
+            e.target.closest(
+                'a, button, input, textarea, select, label'
+            )
+        ) {
+            return;
+        }
 
-            if (clickX > rect.width / 2) {
-                flipNext();
-            } else {
-                flipPrev();
-            }
+        const rect = book.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
 
-        });
+        if (clickX > rect.width / 2) {
+            flipNext();
+        } else {
+            flipPrev();
+        }
+
+    });
+
+}
 
     }
 
