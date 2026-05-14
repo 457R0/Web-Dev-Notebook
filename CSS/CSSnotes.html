@@ -1,38 +1,61 @@
-<h1>CSS Referenes</h1>
+<div class="hi">
+<div class="intro"> <!--Looking under the hood? Good on you! -->
+<h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS Quickstart</a></h1>
 Adding a style to the webpage is easy! We use a file called style.css, it's placed inside the <strong>&lt;head&gt;</strong>
 <h5>Example:</h5><p>&lt;link rel="stylesheet" href="style.css"&gt;</p>
 <br>
-<div class="cssrule"> <!--CSS Rule -->
-	<p>CSS-Rule:A Selector and its properties form a CSS rule. For lack of a better explaination, it's CSS's verison of a element. There's no limit to how many rules can be in a webpage!</p>
-</div> 
+</div>
+<div class="css-rule"> <!--CSS Rule -->
+<p>CSS-Rule:A Selector and its properties form a CSS rule. For lack of a better explaination, it's CSS's verison of a element. There's no limit to how many rules can be in a webpage!</p> 
 <br>
 It's an element followed by {, then you add the attribute you want, end it with ;, fianlly close with }
 <br>
 Example targeting ALL h1 of the webpage making them green:
 <br>
 <h4><pre><code>h1{<br>color:green;<br>}</code></pre></h4>
-At some point you'll want to target just one element to style, to do so you can use the "Class" attribute. Classes arent unique so you can apply the same class to multiple elements.
+<hr>
+
 <br>
 <br>
 <em>Example:</em> Targeting paragraphs of the webpage:
 <br>
 <h4><pre><code>.p{<br>color:blue;<br>}</code></pre></h4>
-<br>	
+</div>
+<hr>	
 <div class="borders">  <!--CSS Borders --> 
 <h2>CSS Borders</h2> 
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border">3MDN</a>
 <p>Borders are a line around an element of a certain thickness and color.</p>
 </div>
-<br>
-<div class="borderradius"> <!--Border Radius)-->
+<hr>
+<div class="border-radius"> <!--Border Radius-->
 <h2>Border-Radius</h2><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius">MDN</a>
 <p>To make an image an circle, we set <strong>border-radius</strong> to <strong>half the width</strong> of an imgage.</p>
 <em>This only works if the image is a square!</em>
 <pre><code>
-img{
+<strong>img{
 	height: 100px;
 	width: 100px:
 	border-radius: 50px;
 }
-</code></pre>
+</strong>
+</code></pre>	
+</div>
+<hr>
+<div class="class"> <!-- Classes -->
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Class_selectors"><strong>Class</strong></a> attribute is used to group elements and make it easier to be more selective when styling.<br> <em>Note:</em> Classes arent unique so you can apply the same class to multiple elements.</p>
+</div>
+<hr>
+<div class="media-queries"> <!-- Media Query -->
+ <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries">@Media</a> allows you to apply CSS styles depending on a device's media type (such as print vs. screen).
+   <ul><em>It can also use other features or characteristics such as:</em>
+   <li>Screen resolution, orientation, aspect ratio, browser viewport width or height.</li>
+   <li>User preferences such as preferring reduced motion, data usage, or transparency.</li>
+   </ul>
+<br>
+   <ul><h3>Useful Links</h3>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Media_query">Media Query</a></li>
+   <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using">Using Media Queries</a></li>
+   </ul>
+</div>
 </div>
