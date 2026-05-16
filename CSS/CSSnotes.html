@@ -1,10 +1,8 @@
-
 <div class="intro"> <!--Looking under the hood? Good on you! -->
 <h1><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS Quickstart</a></h1>
 Adding a style to the webpage is easy! We use a file called style.css, it's placed inside the <strong>&lt;head&gt;</strong>
 <h5>Example:</h5><p>&lt;link rel="stylesheet" href="style.css"&gt;</p>
 <br>
-</div>
 <section class="terms">
 	<dl class="introlinks">
 	<dt><a href="https://www.w3schools.com/">W3schools</a></dt>
@@ -34,17 +32,16 @@ It's an element followed by {, then you add the attribute you want, end it with 
 <h4><pre><code>.p{<br>color:blue;<br>}</code></pre></h4>
 </div>
 <hr>	
-<div class="borders">  <!--CSS Borders --> 
-<h2>CSS Borders</h2> 
+<div class="borders">  <!-- Borders --> 
+<h2>Borders</h2> 
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border">MDN</a>
 <p>Borders are a line around an element of a certain thickness and color.</p>
-</div>
 <hr>
 <div class="border-radius"> <!--Border Radius-->
 <h2>Border-Radius</h2>
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-radius">MDN</a>
 <p>To make an image an circle, we set <strong>border-radius</strong> to <strong>half the width</strong> of an imgage.</p>
-<em>This only works if the image is a square!</em>
+<em>NOTE: This only works if the image is a square! follows: top-left, top-right, bottrom-right, bottom-left.</em> 
 <pre><code>
 <strong>img{
 	height: 100px;
@@ -54,10 +51,27 @@ It's an element followed by {, then you add the attribute you want, end it with 
 </strong>
 </code></pre>	
 </div>
+</div>
 <hr>
 <div class="class"> <!-- Classes -->
 <h2>Class selector</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Class_selectors"><strong>Class</strong></a> attribute is used to group elements and make it easier to be more selective when styling.<br> <em>Note:</em> Classes arent unique so you can apply the same class to multiple elements.</p>
+</div>
+<hr>
+<div class="id">  <!--ID-->
+<h2>ID selector</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors">.id</a></p><br> The id selector is used to style a specific group of elements, as they are unique, they can <strong>NOT</strong> be used multiple times like the class selector can.     
+<p><em>Note:</em> To call the id selector in css we use the #.</p>
+<pre><code><strong>
+HTML: &lt;div id="example"&gt;
+CSS: #example{
+} 
+</strong></code></pre>
+</div>
+<hr>
+<div class="margin"> <!--Margin-->
+<h2>Margin</h2>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin">Margin</a><br>This property can be used to set a margin on all four sides of an element.<br>Margins create extra space around an element, unlike padding, which creates extra space within an element.</p>
 </div>
 <hr>
 <div class="media-queries"> <!-- Media Query -->
@@ -74,15 +88,12 @@ It's an element followed by {, then you add the attribute you want, end it with 
    </ul>
 </div>
 <hr>
-<div class="id">  <!--ID-->
-<h2>ID selector</h2>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/ID_selectors">.id</a></p><br> The id selector is used to style a specific group of elements, as they are unique, they can <strong>NOT</strong> be used multiple times like the class selector can.     
-<p><em>Note:</em> To call the id selector in css we use the #.</p>
-<pre><code>
-HTML: &lt;div id="example"&gt;
-CSS: #example{
-} 
-</code></pre>
+<div class="padding"> <!--Padding-->
+<h2>Padding</h2>
+<p><a href="https://www.w3schools.com/css/css_padding.asp">Padding</a><br>properties are used to generate space around an element's content, inside of any defined borders.</p>
+<p>When setting the values of padding it goes in a clockwise rotation shown below.
+<br><em>Example:</em><pre><code><strong>Padding: Top, Right, Bottom, Left</strong></code></pre></p>
 </div>
-</section>
 
+</section>
+</div>
